@@ -20,17 +20,6 @@ def parse(html):
             recipes[count]['difficulty'] = difficulty.get_text()
             recipes[count]['prep_time'] = prep_time.get_text()
             count+=1
-    # soup = bs(html, 'html.parser')
-    # name_divs = soup.find_all('p', class_="recipe-name")
-    # difficulty_divs = soup.find_all('span', class_="recipe-difficulty")
-    # prep_time_divs = soup.find_all('span', class_="recipe-cooktime")
-    # count = len(recipes)
-    # for name, difficulty, prep_time in zip(name_divs, difficulty_divs, prep_time_divs):
-    #     recipes.append({})
-    #     recipes[count]['name'] = name.get_text()
-    #     recipes[count]['difficulty'] = difficulty.get_text()
-    #     recipes[count]['prep_time'] = prep_time.get_text()
-    #     count+=1
     return recipes
 
 def parse_recipe(article):

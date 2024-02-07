@@ -5,6 +5,14 @@ import csv
 from os import path
 from bs4 import BeautifulSoup as bs
 
+
+search_url = 'https://recipes.lewagon.com/'
+pages_to_scrape = 3
+
+def parse(html):
+    soup = bs(html, 'html.parse')
+    return [parse_recipe(article) for article in soup.find_all('div', class_='recipe-details')]
+
 def parse(html):
     ''' return a list of dict {name, difficulty, prep_time} '''
     recipes = []
